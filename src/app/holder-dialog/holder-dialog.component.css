@@ -1,0 +1,51 @@
+.holder-dialog {
+  color: #263238cf;
+}
+
+.holder-dialog > ul {
+  padding: 0;
+}
+
+.holder-dialog .holder-item {
+  display: flex;
+}
+
+.holder-dialog .holder-item > .remove-holder {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.holder-dialog .holder-item > p {
+  font-size: 1rem;
+}
+
+.holder-dialog .holder-item > .remove-holder:hover+p {
+  text-decoration: line-through;
+}
+
+.holder-dialog > .new-holder {
+  width: 99%;
+  z-index: 10;
+}
+
+.holder-dialog > .new-holder .add-holder {
+  cursor: pointer;
+}
+
+::ng-deep .mat-form-field-label {
+  color: #845EC2!important;
+}
+
+::ng-deep .mat-autocomplete-panel {
+  background-color: #AE97D7;
+}
+
+
+.holder-dialog > .new-holder input {
+  font-size: 1rem;
+}
+
+.holder-dialog > .btn-validate {
+  margin-top: 20px;
+  width: 100%;
+}

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #4B4453;
+}
+
+mat-dialog-container {
+  background: #FCF8FF !important;
+  border-radius: 30px !important;
+}
+
+.holders-tooltip {
+  white-space: pre-line;
+}
+
+.snack-guest {
+  color: #ff8066 !important;
+  background-color: #fcf8ff !important;
+  border-radius: 50px !important;
+}

@@ -1,0 +1,21 @@
+<div class="todo">
+  <div class="todo-content">
+    <button mat-button class="add-task" (click)="addTask()">
+      new task
+      <span class="add-icon">
+        <mat-icon inline>add</mat-icon>
+      </span>
+    </button>
+    <h1 class="todo-title">{{title}}</h1>
+    <!-- ↓↓↓↓↓↓↓↓ A MODIFIER  ↓↓↓↓↓↓↓↓ -->
+    <div cdkDropList [cdkDropListData]="tasks" class="-list"  (cdkDropListDropped)="drop($event)">
+      <span *ngFor="let task of tasks" >
+        <app-new-task *ngIf="task.edit; else simpleTask" [task]="task" cdkDrag></app-new-task>
+        <ng-template #simpleTask>
+          <app-task (removeTaskEvent)="removeTask($event)" [task]="task" cdkDrag></app-task>
+        </ng-template>
+      </span>
+      <!-- <app-task cdkDrag></app-task> -->
+    </div>
+  </div>
+</div>

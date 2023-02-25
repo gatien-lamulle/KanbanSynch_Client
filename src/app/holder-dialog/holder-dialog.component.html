@@ -1,0 +1,25 @@
+<div class="holder-dialog" mat-dialog-content>
+
+  <ul>
+    <li *ngFor="let holder of holders" class="holder-item">
+      <mat-icon color="warn" class="remove-holder" (click)="removeHolder(holder.username)">clear</mat-icon>
+      <p>{{holder.username}}</p>
+    </li>
+  </ul>
+  <mat-form-field class="new-holder" appearance="legacy">
+    <mat-label>Username</mat-label>
+    <input matInput [formControl]="usernameFormControl" type="text" [(ngModel)]="username" [matAutocomplete]="auto">
+    <mat-icon color="primary" matSuffix class="add-holder" (click)="addHolder($event)">add</mat-icon>
+    <mat-error *ngIf="usernameFormControl.hasError('invalid')">
+      Username must be a <strong>guest</strong>
+    </mat-error>
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of possibleHolders | arrayIntersection:holdersString()" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <button [mat-dialog-close]="holders" class="btn-validate" mat-flat-button>Valider</button>
+
+</div>

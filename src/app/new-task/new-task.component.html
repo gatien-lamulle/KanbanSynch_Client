@@ -1,0 +1,28 @@
+<div class="task">
+  <!-- <div class="title-task-container"> -->
+  <h3 [contenteditable]="true" propValueAccessor="innerHTML" onkeypress="return (this.innerText.length <= 30)"
+  [(ngModel)]="task.title" class="title-task" placeholder="Title"></h3>
+  <!-- </div> -->
+  <div class="owners" [matTooltip]="holdersTooltip()" matTooltipClass="holders-tooltip" (click)="editHolders()">
+    <mat-icon class="holders-icon" inline> person_add</mat-icon>
+    <p *ngIf="task.holder.length > 0" class="owners-name">{{task.holder.length}}</p>
+  </div>
+  <!-- Ajouter <br> automatiquement ! -->
+  <p placeholder="Description" [contenteditable]="true" propValueAccessor="innerHTML"
+  onkeypress="return (this.innerText.length <= 200)" [(ngModel)]="task.description" class="desc">
+  </p>
+  <span class="bottom-container">
+    <p class="time-remaining">End Date:
+      <input class="choose-date" [(ngModel)]="task.endDate" [matDatepicker]="picker" required [min]="minEndDate">
+      <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </p>
+    <button (click)="validateTask()" mat-button class="validate">
+      <mat-icon color="accent" inline class="validate-icon">done</mat-icon>
+    </button>
+  </span>
+  <mat-error *ngIf="fieldsErrorMessage">
+    <!-- Username is <strong>required</strong> -->
+    {{fieldsErrorMessage}}
+  </mat-error>
+</div>

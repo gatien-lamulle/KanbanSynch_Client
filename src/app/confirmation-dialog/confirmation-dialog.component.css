@@ -1,0 +1,23 @@
+.confirmation-title {
+  color: #4B4453;
+}
+
+.confirmation-message {
+  color: #4B4453 !important;
+  font-size: 1rem;
+}
+
+.confirmation-action {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.confirmation-button {
+  width: 65px;
+  color: #FCF8FF;
+  background-color: #4B4453;
+  font-family: Elsie;
+  font-weight: 500;
+  border-radius: 10px;
+}

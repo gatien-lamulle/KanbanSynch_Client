@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<div class="my-kanban">
+  <h2>My Kanbans</h2>
+  <button matTooltip="Create new Kanban" matTooltipPosition="right" (click)="addNewKanban($event)" color="accent" class="add-button" mat-icon-button>
+    <mat-icon>add_circle</mat-icon>
+  </button>
+  <!-- <h4>Own Kanban:</h4> -->
+  <div class="guest-kanbans">
+    <div *ngFor="let ownk of ownKanban" class="own-kanbans">
+      <button (click)="removeKanban($event, ownk.idKanban)" color="warn" class="delete-button" mat-icon-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+          <a class="kanban-selection" *ngIf="ownk" routerLink="`/home" [queryParams]="{id: ownk.idKanban}" routerLinkActive="active">
+            <!-- <div class="name-and-delete"> -->
+              <h6 class="name">{{ownk.name}}</h6>
+
+            <!-- </div> -->
+            <!-- <iframe height="200" width="400" class="preview" src="http://localhost:4200/home"> -->
+            <!-- </iframe> -->
+            <div class="preview-container">
+              <span class="over-preview"></span>
+              <app-home class="preview" [preview]="{scaleValue: 0.3, kanbanId: ownk.idKanban}"></app-home>
+            </div>
+            <p class="kanban-owner">ME</p>
+          </a>
+    </div>
+  </div>
+  <!-- <h4>Guested Kanbans</h4> -->
+  <h2 *ngIf="myGuestedKanban.length" style="margin-bottom: 70px;">Guested Kanbans</h2>
+  <div class="guest-kanbans">
+      <div *ngFor="let guestKanban of myGuestedKanban" class="own-kanbans">
+        <button (click)="removeGuest($event, guestKanban.idKanban)" color="warn" class="delete-button" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+        <a class="kanban-selection" [routerLink]="['/home']" [queryParams]="{id: guestKanban.idKanban}" routerLinkActive="active">
+          <h6 class="name">{{guestKanban.name}}</h6>
+          <div class="preview-container">
+            <span class="over-preview"></span>
+            <app-home class="preview" [preview]="{scaleValue: 0.3, kanbanId: guestKanban.idKanban}"></app-home>
+          </div>
+          <p class="kanban-owner">{{guestKanban.creator.username}}</p>
+        </a>
+      </div>
+  </div>
+
+</div>
+

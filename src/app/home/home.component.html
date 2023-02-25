@@ -1,0 +1,13 @@
+<div class="home" [ngStyle]="homeStyle">
+  <app-navbar [kanbanId]="kanban()"></app-navbar>
+
+  <div class="title-container">
+  <h3 #titleKanban [contentEditable]="true" spellcheck="false" (input)="titleChange()" class="title-kanban">{{title}}</h3>
+  <mat-icon *ngIf="changeTitle" matTooltip="Save title" matTooltipPosition="after" color="primary" class="title-icon" (click)="saveTitle()">save</mat-icon>
+  </div>
+  <div cdkDropListGroup class="todo-container">
+  <app-todo title="TODO" status="TODO" [kanban]="kanban()" [preview]="preview !== null" class="todo"></app-todo>
+  <app-todo title="In Progress" status="INPROGRESS" [kanban]="kanban()" [preview]="preview !== null" class="todo"></app-todo>
+  <app-todo title="Done" status="DONE" [kanban]="kanban()" [preview]="preview !== null" class="todo"></app-todo>
+  </div>
+</div>

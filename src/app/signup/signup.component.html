@@ -1,0 +1,40 @@
+<div class="signup">
+  <h2 class="title">SignUp</h2>
+  <mat-dialog-content>
+    <div class="form" [formGroup]="signupForm">
+      <div class="field-form">
+        <label for="username">Username:</label>
+        <input matInput type="text" name="username" id="username" minlength="4" maxlength="30" pattern="^[a-zA-Z0-9À-ú._?!]+$" formControlName="username">
+        <mat-error *ngIf="signupForm.controls.username.touched && !signupForm.controls.username.valid">4 charachers minimum</mat-error>
+      </div>
+      <div class="field-form">
+        <label for="email">Email:</label>
+        <input matInput type="text" name="email" id="email" formControlName="email">
+        <mat-error *ngIf="signupForm.controls.email.touched && !signupForm.controls.email.valid">Email is invalid</mat-error>
+      </div>
+      <div class="field-form">
+        <label for="password">Password:</label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" id="password" minlength="8" maxlength="100" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$" formControlName="password">
+        <button class="pass-eye" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="signupForm.controls.password.touched && !signupForm.controls.password.valid">needs lower + upper + digit + 8 min chars</mat-error>
+      </div>
+    </div>
+    <button [disabled]="!signupForm.valid" (click)="signup()" mat-raised-button color="accent" class="submit-btn">
+      <mat-spinner *ngIf="loading; else elseBlock" [strokeWidth]="2" [diameter]="30"></mat-spinner>
+      <ng-template #elseBlock>SignUp</ng-template>
+    </button>
+    <br>
+    <mat-error *ngIf="error">{{error}}</mat-error>
+
+    <div class="login">
+      <p class="login-sentence">
+        You already have an account?
+      </p>
+      <button class="login-btn" (click)="openLogin()" mat-raised-button color="dark">LogIn</button>
+    </div>
+
+  </mat-dialog-content>
+</div>

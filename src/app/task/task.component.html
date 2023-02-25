@@ -1,0 +1,18 @@
+<div class="task">
+  <!-- <h3 class="title-task">C'est la merde quand le texte est long</h3> -->
+  <mat-icon (click)="deleteTask()" inline color="warn" class="delete">clear</mat-icon>
+  <h3 [innerHTML]="title" class="title-task"></h3>
+  <div *ngIf="holders.length > 0" [matTooltip]="holdersTooltip" matTooltipClass="holders-tooltip" class="owners">
+    <mat-icon inline class="holders-icon">person</mat-icon>
+    <p class="owners-name">{{holders.length}}</p>
+  </div>
+  <!-- Ajouter <br> automatiquement ! -->
+  <p [innerHTML]="description" class="desc">
+  </p>
+  <p *ngIf="dateIsPast(); else inTime" class="time-past">Time expired since {{endDate | dfnsParseIso | dfnsFormatDistanceToNow: optionDate}}</p>
+  <ng-template #inTime>
+    <p class="time-remaining">Time remaining: {{endDate | dfnsParseIso | dfnsFormatDistanceToNow: optionDate}}</p>
+  </ng-template>
+  <mat-icon (click)="editTask()" inline class="edit">edit</mat-icon>
+
+</div>

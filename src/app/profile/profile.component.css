@@ -1,0 +1,111 @@
+.profile {
+  font-family: 'Elsie', cursive;
+}
+
+.profile > .title {
+  font-size: 3rem;
+  color: #4B4453;
+  text-decoration: underline;
+  text-align: center;
+  margin: 30px;
+}
+
+.profile > .content {
+  padding: 10px;
+}
+
+.profile .panel {
+  background-color: #FCF8FF;
+  color: #4B4453;
+}
+
+.profile .head {
+  font-size: 1.3rem;
+}
+
+
+.profile .body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile .form {
+  width: 300px;
+}
+
+.profile .pass-error {
+  /* display: flex; */
+  /* align-items: center; */
+  position: relative;
+}
+
+.profile .error-email {
+  margin-left: 100px;
+}
+
+.profile .pass-error > .current {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 500px;
+}
+
+.profile .pass-error > .new {
+  position: absolute;
+  top: 0;
+  left: 320px;
+  width: 500px;
+}
+
+.profile .label {
+  color: #4B4453 !important;
+  background-color: #FCF8FF;
+  /* padding-left: 10px;
+  padding-bottom: 8px;
+  font-size: 1rem; */
+}
+
+.profile input {
+  border: #4B4453 solid 1px;
+  color: #4B4453;
+  background-color: #FCF8FF;
+  border-radius: 15px;
+  width: 250px !important;
+  height: 33px;
+  font-size: 1rem;
+  padding: 3px;
+  padding-left: 10px;
+  /* padding-right: 50px; */
+  /* outline: none; */
+}
+
+.profile button {
+  color: #FCF8FF;
+  border-radius: 10px;
+  width: 100px;
+  font-size: 1rem;
+}
+
+.profile .submit-btn:disabled {
+  background-color: #ff8066;
+}
+
+.profile .info {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+::ng-deep .mat-expansion-indicator::after,
+.mat-expansion-panel-header-description {
+  color: #4B4453;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-content {
+  height: 30px;
+  align-items: center;
+}

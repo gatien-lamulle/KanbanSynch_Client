@@ -1,0 +1,51 @@
+ .todo {
+   background-color: #FCF8FF;
+   /* border-radius: 40px; */
+   border-radius: 10px;
+   margin-bottom: 30px;
+   overflow: hidden;
+   -webkit-mask-image: -webkit-radial-gradient(white, black);
+   mask-image: radial-gradient(white, black);
+   transform: scaleX(0.91);
+   min-width: 30vw;
+ }
+
+ .-list {
+   min-height: 75%;
+ }
+
+ .todo > .todo-content {
+  overflow: auto;
+  height: 850px;
+  position: relative;
+ }
+
+ .todo > .todo-content > .add-task {
+   font-size: 1.4rem;
+   /* color: #e1d1fc; */
+   color: #DACFED;
+   font-weight: 900;
+   right: 3px;
+   top: 10px;
+   position: absolute;
+   border-radius: 50px;
+ }
+
+ span.add-icon {
+   font-size: 2.3rem;
+   position: relative;
+   top: 7px;
+   /* color: #4B4453; */
+ }
+
+ .todo > .todo-content > .todo-title {
+   font-size: 3rem;
+   font-family: 'Gloria Hallelujah', cursive;
+   text-decoration: underline;
+   color: #4B4453;
+   text-align: center;
+   padding-top: 70px;
+   margin-bottom: 60px;
+
+
+ }

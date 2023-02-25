@@ -1,0 +1,94 @@
+.task {
+  border: solid 3px #DACFED;
+  border-radius: 50px;
+  padding: 20px;
+  margin: 30px;
+  font-family: 'Gloria Hallelujah', cursive;
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-top: 10px;
+  width: inherit;
+  /* min-width: 350px; */
+  max-width: 435px;
+  background-color: #FCF8FF;
+  cursor: grab;
+}
+
+.task > .title-task {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.7rem;
+  color: #263238;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  max-width: 85%;
+  line-height: 50px;
+  white-space: pre-wrap;
+  /* padding: 10px; */
+}
+
+.task > .owners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-family: 'Elsie', cursive;
+  /* width: 50px; */
+  cursor: pointer;
+  height: 14px;
+}
+
+.task > .owners > .holders-icon {
+  font-size: 1.3rem;
+}
+
+.task > .owners > p.owners-name {
+  font-size: 0.8rem;
+}
+
+.task > p.desc {
+  color: #263238;
+  font-size: 1rem;
+  word-wrap:break-word;
+  line-height: 25px;
+  white-space: pre-wrap;
+}
+
+.task > .edit {
+  /* border: red solid 2px; */
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.task > .delete {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 4px;
+  top: -3px;
+  background-color: #FCF8FF;
+  border-radius: 100px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.time-remaining {
+  color: #2632385f;
+  font-family: 'Elsie', cursive;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.time-past {
+  color: #FF876F;
+  font-family: 'Elsie', cursive;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

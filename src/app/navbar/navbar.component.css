@@ -1,0 +1,153 @@
+.navbar {
+  height: 85px;
+}
+
+.navbar > .user-btn {
+  font-size: 4rem;
+  height: 100%;
+}
+
+.navbar > .public {
+  /* border: 1px solid red; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.navbar > .public > p {
+  font-size: 1.3rem;
+  margin-bottom: 3px;
+}
+
+.navbar > .public > p.private-txt {
+  color: #ff8066;
+  content: "private";
+}
+
+.navbar > .public > .public-toggle {
+  transform: scale(1.1);
+  -webkit-transform:scale(1.1);
+}
+
+::ng-deep .mat-slide-toggle .mat-slide-toggle-bar  {
+  background-color: #4B4453;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #DACFED;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #FCF8FF;
+}
+
+::ng-deep .mat-slide-toggle .mat-slide-toggle-thumb {
+  background-color: #FCF8FF;
+}
+
+.delete-guest {
+  position: relative;
+  top: 9px;
+  cursor: pointer;
+
+  /* margin-top: 30px; */
+}
+
+.delete-guest:hover .guest {
+  text-decoration: line-through;
+}
+
+.navbar > h1.title-site {
+  position: absolute;
+  right: 30px;
+  font-size: 3rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+.navbar > .users {
+  /* border: red 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-left: 40px;
+}
+
+.navbar > .users > .creator {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.navbar > .users > .not-connected {
+  font-size: 0.8rem;
+  color: #ff8066;
+  position: absolute;
+  top: 50px;
+  left: 120px;
+}
+
+.navbar > .users > .guests > button {
+  padding: 0;
+  font-size: 1rem;
+}
+
+::ng-deep .mat-menu-content {
+  background-color: #DACFED;
+  margin: 0;
+  padding: 0 !important;
+  /* border-radius: 30px; */
+
+}
+
+::ng-deep .guests-menu {
+  min-height: 0px !important;
+}
+
+.user-menu {
+  background-color:#FCF8FF;
+  color: #4B4453;
+  width: 200px;
+}
+
+.guest {
+  color: #4B4453;
+  /* border: black solid 1px; */
+  text-align: center;
+  margin: 0;
+  padding: 7px;
+  /* margin-left: 20px; */
+}
+
+.navbar > .add-guest {
+  width: 20%;
+  height: 50%;
+  /* border-radius: 100px; */
+  border-radius: 50px;
+  border: none;
+  background-color: rgba(218, 207, 237, 0.5);
+  padding-left: 30px;
+  margin-left: 70px;
+  color: #FCF8FF;
+  font-size: 1.1rem;
+  font-family: 'Elsie', cursive;
+  outline-style: none;
+}
+
+.navbar > .add-guest::placeholder {
+  opacity: 1;
+  color: #FCF8FF;
+  font-size: 1.1rem;
+  font-family: 'Elsie', cursive;
+}
+
+.navbar .icon-guests {
+  cursor: pointer;
+  font-size: 1.8rem;
+  position: relative;
+  left: -40px;
+  top: -3px;
+}

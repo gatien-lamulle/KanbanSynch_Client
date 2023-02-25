@@ -1,0 +1,91 @@
+
+.preview {
+  width: 27vw;
+  height: 320px;
+  border: #845EC2 solid 5px;
+  display: block;
+}
+
+.preview-container {
+  position: relative;
+}
+
+.over-preview {
+  width: 27vw;
+  height: 320px;
+  background-color: transparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.my-kanban > h2 {
+  font-size: 3rem;
+  color: #FCF8FF;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 70px;
+}
+
+a {
+  text-decoration: none;
+  width: fit-content;
+  margin: auto;
+}
+
+.name {
+  color: #FCF8FF;
+  font-size: 2rem;
+  /* margin-bottom: 25px; */
+  text-decoration: underline;
+}
+
+.kanban-owner {
+  color: #FCF8FF;
+  font-style: italic;
+  margin-top: 3px;
+}
+
+.guest-kanbans {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: 3;
+
+}
+
+.kanban-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.own-kanbans {
+  margin-bottom: 130px;
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  top: -8px;
+  right: -40px;
+}
+
+.delete-button:hover {
+  transform: scale(1.1);
+}
+
+.delete-button:hover ~ a {
+  pointer-events: none;
+}
+
+.add-button {
+  position: absolute;
+  top: 0;
+  left: 330px;
+}
+
+.my-kanban {
+  position: relative;
+}

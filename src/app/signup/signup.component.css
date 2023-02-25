@@ -1,0 +1,104 @@
+
+.signup {
+  font-family: 'Elsie', cursive;
+}
+
+.signup > .title {
+  font-size: 5rem;
+  color: #4B4453;
+  text-decoration: underline;
+  text-align: center;
+  margin: 50px;
+
+
+}
+
+.signup .form {
+  /* border: rebeccapurple 3px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.signup .field-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.signup label {
+  color: #4B4453;
+  padding-left: 10px;
+  padding-bottom: 8px;
+  font-size: 1rem;
+}
+
+.signup input {
+  border: #4B4453 solid 1px;
+  color: #4B4453;
+  background-color: #FCF8FF;
+  border-radius: 15px;
+  width: 300px;
+  height: 40px;
+  font-size: 1.3rem;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 50px;
+  outline: none;
+}
+
+.signup .pass-eye {
+  color: #4B4453;
+  position: absolute;
+  right: 5px;
+  top: 35px;
+}
+
+.signup .submit-btn {
+  color: #FCF8FF;
+  border-radius: 10px;
+  width: 140px;
+  /* height: 40px; */
+  font-size: 1.4rem;
+  padding: 5px;
+  margin-left: 65%;
+}
+
+::ng-deep .signup .submit-btn > .mat-button-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #FCF8FF;
+}
+
+.signup .submit-btn:disabled {
+  background-color: #ff8066;
+}
+
+.signup .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.signup .login-sentence {
+  color: #4B4453;
+  font-size: 1rem;
+  text-decoration: underline;
+
+}
+
+.signup .login-btn {
+  border-radius: 10px;
+  width: 100px;
+  font-size: 1rem;
+
+}

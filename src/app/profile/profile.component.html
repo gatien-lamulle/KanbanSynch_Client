@@ -1,0 +1,44 @@
+<div class="profile">
+  <h2 class="title">Profile</h2>
+  <mat-dialog-content class="content">
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel expanded class="panel email">
+        <mat-expansion-panel-header class="head">
+          <mat-panel-description>Change Email</mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="body" [formGroup]="profileEmailForm">
+          <mat-form-field class="form" appearance="fill">
+            <mat-label class="label">New email address</mat-label>
+            <input matInput type="email" formControlName="email">
+          </mat-form-field>
+          <button [disabled]="!profileEmailForm.valid" (click)="changeEmail()" mat-raised-button color="accent" class="submit-btn">Change</button>
+        </div>
+        <mat-error class="error-email" *ngIf="profileEmailForm.controls.email.touched && !profileEmailForm.controls.email.valid">Email is invalid</mat-error>
+      </mat-expansion-panel>
+      <mat-expansion-panel expanded class="panel password">
+        <mat-expansion-panel-header class="head">
+
+          <mat-panel-description>Change Password</mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="body" [formGroup]="profilePassForm">
+          <mat-form-field class="form" appearance="fill">
+            <mat-label class="label">Current password</mat-label>
+            <input minlength="8" maxlength="100" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$" formControlName="currentPassword" matInput type="password">
+          </mat-form-field>
+          <mat-form-field class="form" appearance="fill">
+            <mat-label class="label">New password</mat-label>
+            <input minlength="8" maxlength="100" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$" formControlName="newPassword" matInput type="password">
+          </mat-form-field>
+          <button [disabled]="!profilePassForm.valid" (click)="changePassword()" mat-raised-button color="accent" class="submit-btn">Change</button>
+        </div>
+        <span class="pass-error">
+          <mat-error class="current" *ngIf="profilePassForm.controls.currentPassword.touched && !profilePassForm.controls.currentPassword.valid">needs lower + upper + digit + 8 min chars</mat-error>
+          <mat-error class="new" *ngIf="profilePassForm.controls.newPassword.touched && !profilePassForm.controls.newPassword.valid">needs lower + upper + digit + 8 min chars</mat-error>
+        </span>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <p [ngStyle]="{'color': info.toLowerCase().includes('success') ? '#00C9A7' : '#FF876F'}" class="info">{{info}}</p>
+
+  </mat-dialog-content>
+</div>
+

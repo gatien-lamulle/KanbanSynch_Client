@@ -1,0 +1,68 @@
+[contenteditable] {
+  outline: none;
+  cursor: text;
+  /* border-bottom: #2632388c 1px solid; */
+}
+
+/* .title-task-container {
+  display: flex;
+} */
+
+/* .title-task-container > .title-task {
+  min-width: 350px;
+  max-width: 150px;
+  word-wrap: break-word;
+  height: 40px;
+} */
+[contentEditable][placeholder]:empty:before{
+  content:attr(placeholder);
+  color:#263238cf;
+  font-style:italic;
+  cursor: text;
+}
+
+.validate {
+  font-size: 2.3rem;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.bottom-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.owners {
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+.task > .owners > p.owners-name {
+  margin-left: 4px;
+}
+
+::ng-deep .mat-datepicker-toggle-default-icon {
+  /* color: #845EC2; */
+  /* color: #DACFED; */
+  /* color: #263238; */
+  color: #2632385f;
+  width: 20px;
+}
+
+.choose-date {
+  background-color: transparent;
+  border: none;
+  color: #2632385f;
+  font-family: 'Elsie', cursive;
+  font-size: 0.8rem;
+  width: 60px;
+  /* min-width: 10px; */
+  /* display: block; */
+}
+
+.choose-date:invalid {
+  display: none;
+
+}

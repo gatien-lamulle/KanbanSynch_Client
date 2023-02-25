@@ -1,0 +1,46 @@
+
+.todo-container {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  /* border: red 3px solid; */
+}
+
+.todo-container > .todo {
+  flex-grow: 0;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.title-container > .title-kanban {
+  /* margin-left: 100px; */
+  margin: 0;
+  width: fit-content;
+  padding: 8px;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #FCF8FF !important;
+
+}
+
+.title-container > .title-kanban:focus {
+  border: none;
+  text-decoration: none;
+  outline: none;
+  border-bottom: #FCF8FF solid 3px;
+}
+
+
+.title-container > .title-icon {
+  /* color: #FCF8FF !important; */
+  margin-left: 10px;
+  cursor: pointer;
+}

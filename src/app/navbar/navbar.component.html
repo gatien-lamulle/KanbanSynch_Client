@@ -1,0 +1,41 @@
+<mat-toolbar color='primary' class="navbar">
+  <button *ngIf="userConnected(); else connection" [matMenuTriggerFor]="usermenu" mat-button class="user-btn">
+    <mat-icon inline>account_circle</mat-icon>
+  </button>
+  <mat-menu xPosition="before" #usermenu="matMenu">
+    <button class="user-menu" (click)="myKanbanPage()" mat-menu-item>My Kanbans</button>
+    <button (click)="openDialog('profile')" class="user-menu" mat-menu-item>Profile</button>
+    <button (click)="signout()" class="user-menu" mat-menu-item>Log Out</button>
+  </mat-menu>
+  <ng-template #connection>
+    <button (click)="openDialog()" mat-button class="user-btn">
+      <mat-icon inline>account_circle</mat-icon>
+    </button>
+  </ng-template>
+  <div *ngIf="userConnected() && router.url !== '/kanbans'" class="public">
+    <p>Public</p>
+    <mat-slide-toggle [disabled]="!amIOwner()" [(ngModel)]="isPublic" (change)="updatePublicKanban()" class="public-toggle"></mat-slide-toggle>
+  </div>
+  <div *ngIf="router.url !== '/kanbans'" class="users">
+    <p class="creator">Creator : {{userConnected() && owner ? owner!.username : 'Me'}}</p>
+    <p class="not-connected" *ngIf="!userConnected()"><mat-icon> warning_amber</mat-icon> Vous n'êtes pas connecté</p>
+    <div class="guests" *ngIf="userConnected() && isPublic">
+      <button mat-button [matMenuTriggerFor]="menu">Guests: {{guests.length}}
+        <mat-icon *ngIf="guests && guests.length > 0">expand_more</mat-icon>
+      </button>
+      <mat-menu xPosition="after" class="guests-menu" #menu="matMenu">
+        <p class="guest" *ngFor="let guest of guests">{{guest.username}} <span matTooltip="Remove this guest" matTooltipPosition="right" (click)="removeGuest(guest.username)" class="delete-guest"><mat-icon  color="warn">close</mat-icon></span></p>
+      </mat-menu>
+    </div>
+  </div>
+  <input  [readonly]="!amIOwner()" matInput *ngIf="userConnected() && isPublic && router.url !== '/kanbans'" type="text" placeholder="Add Guests..." class="add-guest" [matAutocomplete]="guestAuto" [formControl]="guestsControl"/>
+  <mat-icon class="icon-guests" (click)="addGuest()" *ngIf="userConnected() && isPublic && router.url !== '/kanbans'">add</mat-icon>
+  <mat-autocomplete #guestAuto="matAutocomplete">
+    <mat-option *ngFor="let guest of possiblesGuests | async" [value]="guest">
+      {{guest}}
+    </mat-option>
+  </mat-autocomplete>
+  <h1 routerLink="/home" class="title-site">KanbanSynch</h1>
+
+
+</mat-toolbar>

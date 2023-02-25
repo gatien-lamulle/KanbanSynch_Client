@@ -1,0 +1,34 @@
+<div class="login">
+  <h2 class="title">LogIn</h2>
+  <mat-dialog-content>
+    <div class="form" [formGroup]="loginForm">
+      <div class="field-form">
+        <label for="username">Username:</label>
+        <input matInput type="text" name="username" id="username" formControlName="username" minlength="4" maxlength="30" pattern="^[a-zA-Z0-9À-ú._?!]+$"/>
+        <mat-error *ngIf="loginForm.controls.username.touched && !loginForm.controls.username.valid">4 charachers minimum</mat-error>
+      </div>
+      <div class="field-form">
+        <label for="password">Password:</label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" id="password" formControlName="password" minlength="8" maxlength="100" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$">
+        <button class="pass-eye" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.controls.password.touched && !loginForm.controls.password.valid">needs lower + upper + digit + min 8 chars</mat-error>
+      </div>
+    </div>
+    <button [disabled]="!loginForm.valid" (click)="login()" mat-raised-button color="accent" class="submit-btn">
+      <mat-spinner *ngIf="loading; else elseBlock" [strokeWidth]="2" [diameter]="30"></mat-spinner>
+      <ng-template #elseBlock>LogIn</ng-template>
+    </button>
+    <br>
+    <mat-error *ngIf="error">{{error}}</mat-error>
+
+    <div class="signup">
+      <p class="signup-sentence">
+        You don't have an account yet?
+      </p>
+      <button class="signup-btn" mat-raised-button color="dark" (click)="openSignup()">SignUp</button>
+    </div>
+
+  </mat-dialog-content>
+</div>
